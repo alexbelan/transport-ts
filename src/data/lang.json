@@ -1,0 +1,30 @@
+{
+    "ru": {
+        "filter": "Фильтр",
+        "choose": "Выбрать",
+        "remove": "Убрать",
+        "call": "Позвонить",
+        "write": "Написать",
+        "phone": "Номер телефона",
+        "category": "Категория ТС",
+        "passenger": "Пассажирский",
+        "cargo": "Грузовой",
+        "special_transport": "Спец Траспорт",
+        "setting": "Настройки",
+        "select_language": "Выбор языка"
+    },
+    "en": {
+        "filter": "Filter",
+        "choose": "Choose",
+        "remove": "Remove",
+        "call": "Call",
+        "write": "Write",
+        "phone": "Phone number",
+        "category": "Category TS",
+        "passenger": "Passenger",
+        "cargo": "Cargo",
+        "special_transport": "Special Transport",
+        "setting": "Setting",
+        "select_language": "Select language"
+    }
+}

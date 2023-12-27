@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "type": "passenger",
+        "driver": "Вася Пупкин",
+        "phone": "89999999999",
+        "coordinate": {
+            "latitude": 56.890983,
+            "longitude": 60.639976
+        }
+    },
+    {
+        "id": 2,
+        "type": "cargo",
+        "driver": "Андрей Чукотин",
+        "phone": "8902384127",
+        "coordinate": {
+            "latitude": 56.856685,
+            "longitude": 60.606584
+        }
+    },
+    {
+        "id": 3,
+        "type": "special_transport",
+        "driver": "Дима Курдикин",
+        "phone": "83333333333",
+        "coordinate": {
+            "latitude": 56.808481,
+            "longitude": 60.591854
+        }
+    },
+    {
+        "id": 4,
+        "type": "passenger",
+        "driver": "Анатолий Власов",
+        "phone": "89999999999",
+        "coordinate": {
+            "latitude": 56.872033,
+            "longitude": 60.557172
+        }
+    },
+    {
+        "id": 5,
+        "type": "cargo",
+        "driver": "Миша Шарекин",
+        "phone": "82222222222",
+        "coordinate": {
+            "latitude": 56.898667,
+            "longitude": 60.614458
+        }
+    },
+    {
+        "id": 6,
+        "type": "passenger",
+        "driver": "Вова Кишинов",
+        "phone": "81212121212",
+        "coordinate": {
+            "latitude": 56.788850,
+            "longitude": 60.587018
+        }
+    },
+    {
+        "id": 7,
+        "type": "special_transport",
+        "driver": "Саша Синов",
+        "phone": "81234567890",
+        "coordinate": {
+            "latitude": 56.827064,
+            "longitude": 60.519791
+        }
+    },
+    {
+        "id": 8,
+        "type": "special_transport",
+        "driver": "Игорь Дистанов",
+        "phone": "80987654321",
+        "coordinate": {
+            "latitude": 56.895471,
+            "longitude": 60.529496
+        }
+    },
+    {
+        "id": 9,
+        "type": "passenger",
+        "driver": "Мария Иванова",
+        "phone": "88881113337",
+        "coordinate": {
+            "latitude": 56.924305,
+            "longitude": 60.613274
+        }
+    },
+    {
+        "id": 10,
+        "type": "cargo",
+        "driver": "Вася Шортский",
+        "phone": "81111111111",
+        "coordinate": {
+            "latitude": 56.903080,
+            "longitude": 60.597737
+        }
+    }
+]

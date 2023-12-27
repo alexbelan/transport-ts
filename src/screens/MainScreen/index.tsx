@@ -1,0 +1,1 @@
+export {default as MainScreen} from './components/MainScreen'

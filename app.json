@@ -14,17 +14,33 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "experiments": {
+      "tsconfigPaths": true
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "app.ts",
+      "config": {
+        "googleMapsApiKey": "AIzaSyAH_TaluoKbl6nedaVC1QRspheauUYlptA"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAH_TaluoKbl6nedaVC1QRspheauUYlptA"
+        }
+      },
+      "package": "app.ts"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

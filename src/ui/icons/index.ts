@@ -1,0 +1,7 @@
+export {default as CargoIcon} from './components/CargoIcon'
+export {default as PassengerIcon} from './components/PassengerIcon'
+export {default as SpecialTransportIcon} from './components/SpecialTransportIcon'
+export {default as MapIcon} from './components/MapIcon'
+export {default as ListIcon} from './components/ListIcon'
+export {default as BackIcon} from './components/BackIcon'
+export {default as SettingIcon} from './components/SettingIcon'

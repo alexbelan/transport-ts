@@ -1,0 +1,1 @@
+export {default as ItemTS} from './components/ItemTS'
