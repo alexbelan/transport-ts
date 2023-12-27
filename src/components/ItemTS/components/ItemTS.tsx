@@ -2,10 +2,8 @@ import React from "react"
 import { StyleSheet, View, Text, TouchableHighlight } from "react-native"
 import { StackNavigation } from "@interfaces/index"
 import IconsTS from "./IconsTS"
-import { useDispatch } from "react-redux"
-import { setDriver } from "@store/reducers/appReducer"
-import { useNavigation } from "@react-navigation/native"
 import { ItemProps } from "../types"
+import { useNavigation } from "@react-navigation/native"
 
 const ItemTS = ({
     id,
@@ -14,11 +12,11 @@ const ItemTS = ({
     secondary
 }: ItemProps) => {
     const navigation = useNavigation<StackNavigation>()
-    const dispatch = useDispatch()
 
     const navigateDriverScreen = () => {
-        dispatch(setDriver(id)),
-        navigation.navigate('Driver')
+        navigation.navigate('Driver', {
+            id
+        })
     }
 
     return (

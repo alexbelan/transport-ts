@@ -5,19 +5,16 @@ import { ListIcon, MapIcon, SettingIcon } from "@ui/icons"
 import ButtonIcon from "@src/ui/button/components/ButtonIcon"
 import Filter from "./Filter"
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "@store/index"
-import { setScreen } from "@store/reducers/appReducer"
 import { useLang } from "@context/LanguageProvider"
 import { useNavigation } from "@react-navigation/native"
 import { StackNavigation } from "@interfaces/index"
+import { useScreenValues } from "@src/context/ScreenValuesProvider"
 
 const Header = () => {
     const {translate} = useLang()
+    const { screen, setScreen } = useScreenValues()
     const navigate = useNavigation<StackNavigation>()
-    const dispatch = useDispatch()
     const [isOpenFilter, setIsOpenFilter] = useState<boolean>(false)
-    const screen = useSelector((state: RootState) => state.app.screen)
 
     return (
         <>
@@ -31,11 +28,11 @@ const Header = () => {
                         <SettingIcon width={'35'} height={'35'} color={'#05BCFF'} />
                     </ButtonIcon>
                     {screen === 'list' ? (
-                        <ButtonIcon onPress={() => dispatch(setScreen('map'))} radius={50}>
+                        <ButtonIcon onPress={() => setScreen('map')} radius={50}>
                             <MapIcon width={'35'} height={'35'} color={'#05BCFF'} />
                         </ButtonIcon>
                     ) : (
-                        <ButtonIcon onPress={() => dispatch(setScreen('list'))} radius={50}>
+                        <ButtonIcon onPress={() => setScreen('list')} radius={50}>
                             <ListIcon width={'35'} height={'35'} color={'#05BCFF'} />
                         </ButtonIcon>
                     )}

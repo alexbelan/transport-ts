@@ -1,18 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import { StyleSheet, View, Text, Animated, Easing } from "react-native"
-import Button from "@src/ui/button/components/Button"
+import Button from "@ui/button/components/Button"
 import { MutableRefObject, useEffect, useRef } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "@store/index"
-import { setFilter } from "@store/reducers/appReducer"
 import { useLang } from "@context/LanguageProvider"
 import { PropsFilter } from "../types"
+import { useScreenValues } from "@src/context/ScreenValuesProvider"
 
 const Filter = ({isOpen}: PropsFilter) => {
     const {translate} = useLang()
+    const {setFilter} = useScreenValues()
+    const [filterValue, setFilterValue] = useState(null)
     const posFilter: MutableRefObject<Animated.Value> = useRef(new Animated.Value(-75))
-    const dispatch = useDispatch()
-    const filter = useSelector((state: RootState) => state?.app.filter)
 
     useEffect(() => {
         if(isOpen) {
@@ -25,7 +23,7 @@ const Filter = ({isOpen}: PropsFilter) => {
         }
         if(!isOpen) {
             Animated.timing(posFilter.current, {
-                toValue: -75,
+                toValue: -120,
                 duration: 150,
                 easing: Easing.ease,
                 useNativeDriver: false,
@@ -39,15 +37,15 @@ const Filter = ({isOpen}: PropsFilter) => {
                 <View>
                     <Text>{translate.cargo}</Text>
                 </View>
-                {filter === 'cargo' ? (
+                {filterValue === 'cargo' ? (
                     <Button
                         color={'#EB0000'}
-                        onPress={() => dispatch(setFilter(null))}>
+                        onPress={() => setFilterValue(null)}>
                         {translate.remove}
                     </Button>
                 ) : (
                     <Button
-                        onPress={() => dispatch(setFilter('cargo'))}>
+                        onPress={() => setFilterValue('cargo')}>
                         {translate.choose}
                     </Button>
                 )}
@@ -56,15 +54,15 @@ const Filter = ({isOpen}: PropsFilter) => {
                 <View>
                     <Text>{translate.passenger}</Text>
                 </View>
-                {filter === 'passenger' ? (
+                {filterValue === 'passenger' ? (
                     <Button
                         color={'#EB0000'}
-                        onPress={() => dispatch(setFilter(null))}>
+                        onPress={() => setFilter(null)}>
                         {translate.remove}
                     </Button>
                 ) : (
                     <Button
-                        onPress={() => dispatch(setFilter('passenger'))}>
+                        onPress={() => setFilterValue('passenger')}>
                         {translate.choose}
                     </Button>
                 )}
@@ -73,18 +71,24 @@ const Filter = ({isOpen}: PropsFilter) => {
                 <View>
                     <Text>{translate.special_transport}</Text>
                 </View>
-                {filter === 'special_transport' ? (
+                {filterValue === 'special_transport' ? (
                     <Button
                         color={'#EB0000'}
-                        onPress={() => dispatch(setFilter(null))}>
+                        onPress={() => setFilterValue(null)}>
                         {translate.remove}
                     </Button>
                 ) : (
                     <Button
-                        onPress={() => dispatch(setFilter('special_transport'))}>
+                        onPress={() => setFilterValue('special_transport')}>
                         {translate.choose}
                     </Button>
                 )}
+            </View>
+            <View>
+                <Button
+                    onPress={() => setFilter(filterValue)}>
+                    {translate.done}
+                </Button>
             </View>
         </Animated.View>
     )
@@ -97,7 +101,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         width: '100%',
-        height: 140,
+        height: 185,
         backgroundColor: '#FFFFFF',
         borderBottomColor: '#828282',
         borderBottomWidth: 1,

@@ -14,10 +14,9 @@ const Button = ({
         <TouchableHighlight 
             style={{...styles.root, ...style, width: width}}
             onPress={onPress}>
-                <View style={{...styles.btnView, ...style, backgroundColor: color, width: width}}>
+                <View style={{...styles.btnView, backgroundColor: color, width: width}}>
                     <Text style={{...styles.text, color: textColor}}>{children}</Text>
                 </View>
-            
         </TouchableHighlight>
     )
 }

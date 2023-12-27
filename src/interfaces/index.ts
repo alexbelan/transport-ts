@@ -11,9 +11,13 @@ export interface PropsReactChildren {
   children: ReactNodeElement
 }
 
-export type ScreenNames = ["Main", "Setting", "Driver"]
-export type RootStackParamList = Record<ScreenNames[number], undefined>
-export type StackNavigation = NavigationProp<RootStackParamList>
+export type ScreenNames = {
+  Main: undefined,
+  Setting: undefined,
+  Driver: {id: number}
+}
+// export type RootStackParamList = Record<ScreenNames, undefined>
+export type StackNavigation = NavigationProp<ScreenNames>
 
 export type TypeTS = 'passenger' | 'cargo' | 'special_transport'
 
@@ -30,9 +34,6 @@ export interface Transport {
 
 export interface AppState {
   filter: TypeTS | null,
-  screen: 'map' | 'list',
-  transports: Transport[],
-  driver: number | null
 }
 
 export interface Colors {

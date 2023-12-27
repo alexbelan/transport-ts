@@ -9,7 +9,7 @@ const List = ({transports}: PropsList) => {
 
     return (
         <ScrollView>
-            {transports.map((item, index) => {
+            {transports?.map((item, index) => {
                 return (
                     <ItemTS 
                         key={item.id}
