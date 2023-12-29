@@ -57,7 +57,7 @@ const Filter = ({isOpen}: PropsFilter) => {
                 {filterValue === 'passenger' ? (
                     <Button
                         color={'#EB0000'}
-                        onPress={() => setFilter(null)}>
+                        onPress={() => setFilterValue(null)}>
                         {translate.remove}
                     </Button>
                 ) : (

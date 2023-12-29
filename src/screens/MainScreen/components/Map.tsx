@@ -11,12 +11,12 @@ const Map = ({transports}: PropsMap) => {
           style={styles.map}
           provider={PROVIDER_GOOGLE}
           region={{
-            ...transports[0].coordinate,
+            ...transports?.[0]?.coordinate,
             latitudeDelta: 0.3,
             longitudeDelta: 0.3
           }}
         >
-          {transports.map((item) => {
+          {transports?.map((item) => {
             return (
               <Marker
                 key={item.id}
